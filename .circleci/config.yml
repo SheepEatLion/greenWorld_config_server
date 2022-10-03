@@ -10,5 +10,5 @@ workflows:
     example-workflow:
       jobs:
         - gradle/run:
-            app_src_directory: /config 
+            app_src_directory: ./config 
             command: build 
