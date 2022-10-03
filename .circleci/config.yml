@@ -5,10 +5,22 @@ version: 2.1
 orbs:
   gradle: circleci/gradle@3.0.0
 
+jobs:
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - gradle/collect_test_results:
+          reports_path: build/report/ 
+          test_results_path: build/test-report 
 
 workflows:
-    example-workflow:
+    make-jar-workflow:
       jobs:
         - gradle/run:
             app_src_directory: ./config 
-            command: build 
+            command: bootJar 
+    report-workflow:
+    jobs:
+      - example-job
