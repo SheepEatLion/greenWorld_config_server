@@ -19,4 +19,4 @@ workflows:
       jobs:
         - gradle/run:
             app_src_directory: ./config 
-            command: --stacktrace build
+            command: --scan build
