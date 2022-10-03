@@ -8,9 +8,9 @@ orbs:
           
 
 workflows:
-    make-jar-workflow:
+    example-workflow:
       jobs:
         - gradle/run:
+            executor: '17.0' 
             app_src_directory: ./config 
-            command: --scan build
-            tag: 17.0
+            command: build 
