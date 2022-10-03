@@ -22,5 +22,5 @@ workflows:
             app_src_directory: ./config 
             command: bootJar 
     report-workflow:
-    jobs:
-      - example-job
+      jobs:
+        - example-job
