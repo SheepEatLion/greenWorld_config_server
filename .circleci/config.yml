@@ -5,12 +5,16 @@ version: 2.1
 orbs:
   gradle: circleci/gradle@3.0.0
 
+jobs:
+  build-job:
+    docker:
+      - image: cimg/openjdk:18.0
+    steps:
+      - gradle/run:
+          app_src_directory: ./config 
+          command: --scan build
 
 workflows:
     make-jar-workflow:
       jobs:
-        - gradle/run:
-            docker:
-              - image: cimg/openjdk:18.0
-            app_src_directory: ./config 
-            command: --scan build
+        - build-job
