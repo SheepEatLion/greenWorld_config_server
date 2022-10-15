@@ -2,7 +2,7 @@ name: greenworld_config_server
 
 on:
   push:
-    branches: [ "make_gitAction" ]
+    branches: [ "main" ]
   # pull_request:
   #   branches: [ "make_gitAction" ]
 
